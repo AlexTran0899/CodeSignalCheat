@@ -18,7 +18,7 @@ const Homepage = (props) => {
     return (
         <Container >
             <div>
-            <input spellcheck="false">
+            <input spellcheck="false" placeholder="Search">
             </input>
             </div>
             
