@@ -2,8 +2,7 @@ import './comp.css';
 import React from "react";
 import styled from 'styled-components'
 import disableScroll from 'disable-scroll'
-import SearchIcon from '@material-ui/icons/Search';
-import { IconButton } from "@material-ui/core";
+import InputPredict from 'react-inline-predict'
 
 disableScroll.on()
 const Container = styled.div`
@@ -18,10 +17,12 @@ const Homepage = (props) => {
     return (
         <Container >
             <div>
-            <input spellcheck="false" placeholder="Search">
-            </input>
+                <InputPredict spellcheck="false"
+                     value="text" placeholder="Search"
+                    dictionary={["kiwi", "oranges", "watermelon", "pineapple"]} />
+                    
             </div>
-            
+
         </Container>
     )
 }
