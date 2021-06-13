@@ -2,10 +2,18 @@
 
 div.outside{
   display: flex;
-  align-items: center;
-  margin-top: 40vh;
+  flex-direction: column;
+  margin-top: 30vh;
 }
-.input-predict-container   {
+span{
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Lexend", sans-serif;
+  color: rgb(170, 170, 170);
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+input  {
   width: 70vw;
   max-width: 800px;
   height: 60px;
@@ -18,18 +26,15 @@ div.outside{
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
   background-color: #f8f8ffd5;
-}
-.input-predict-input {
-  width: 69vw;
-  max-width: 780px;
-  height: 60px;
-  font-size: 40px;
-  padding-left: 10px;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
-  color: rgb(51, 51, 51);
   font-family: "Lexend", sans-serif;
+  font-size: 40px;
+  color: rgb(51, 51, 51);
   outline: none;
+}
+b {
+  color:white
 }
