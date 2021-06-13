@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import disableScroll from 'disable-scroll'
 
 disableScroll.on()
+
 const Container = styled.div`
     background: #2B3D52;
     background-attachment: fixed;
@@ -28,8 +29,11 @@ const Homepage = (props) => {
         setPredict(itemname[0])
     }
     const getHighlightedText = () => {
-        if (!predict || !value) {
+        if (!predict && !value) {
             return <span>Press <b>tab</b> to autoselect</span>
+        }
+        if (!predict) {
+            return <span><b>404</b> 😢</span>
         }
         if (value.text?.toLocaleLowerCase() == predict.toLocaleLowerCase()) {
             return <span>Press <b>enter</b> to continue</span>
