@@ -16,11 +16,10 @@ const Container = styled.div`
 const Homepage = (props) => {
     return (
         <Container >
-            <div>
+            <div className="outside">
                 <InputPredict spellcheck="false"
                      value="text" placeholder="Search"
                     dictionary={["kiwi", "oranges", "watermelon", "pineapple"]} />
-                    
             </div>
 
         </Container>
