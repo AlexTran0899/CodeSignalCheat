@@ -1,15 +1,13 @@
 import './comp.css';
 import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
-import disableScroll from 'disable-scroll'
-
-disableScroll.on()
+import ReactPlayer from "react-player";
 
 const Container = styled.div`
     background: #2B3D52;
     background-attachment: fixed;
     background-size: cover;
-    padding: 1%;
+    padding: .01%;
     height: 100vh;
 `
 
@@ -18,12 +16,17 @@ const Homepage = (props) => {
     const [value, setValue] = useState("")
     const [predict, setPredict] = useState("")
     const [data, setData] = useState(intialData)
+    const [link, setLink] = useState(false)
 
-    const handleKeyDown = (e) => {
-        console.log("here")
+    const handleKeyDown = async (e) => {
         if (e.key === 'Tab') {
             e.preventDefault()
             setValue({ text: predict })
+        }
+        if (e.key === 'Enter'){
+            e.preventDefault()
+            await setLink("https://www.youtube.com/watch?v=Rq5SEhs9lws")
+            window.scrollTo(0,1000)
         }
     }
 
@@ -34,9 +37,7 @@ const Homepage = (props) => {
                 return oneatatime
             }
         })
-        console.log(itemname)
         setPredict(itemname[0])
-
     }
 
     const getHighlightedText = () => {
@@ -63,8 +64,16 @@ const Homepage = (props) => {
                     placeholder="Search"
                     onKeyDown={handleKeyDown} />
             </div>
-
+            {link ? <ReactPlayer
+                url={link}
+                className="react-player"
+                playing
+                width="100%"
+                height="100%"
+                controls={false}
+            /> : null}
         </Container>
+
     )
 }
 

@@ -39,6 +39,7 @@
     "pg": "=8.5.1",
     "react-inline-predict": "^2.0.1",
     "react-inline-suggest": "^1.0.0",
+    "react-player": "^2.9.0",
     "sqlite3": "^5.0.2",
     "yup": "^0.32.9"
   },
