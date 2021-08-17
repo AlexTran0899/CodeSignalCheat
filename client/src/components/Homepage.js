@@ -2,6 +2,7 @@ import './comp.css';
 import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import ReactPlayer from "react-player";
+import {javascriptData} from './data'
 
 const Container = styled.div`
     background: #2B3D52;
@@ -11,12 +12,11 @@ const Container = styled.div`
     height: 100vh;
 `
 
-const intialData = ['John', 'David', 'Mike', 'Sam', 'Carol', 'Bob', 'Francis', 'Kyle', 'Roman', 'Ben', 'Luiza', 'Mariana', 'Conney']
 const Homepage = (props) => {
     const [value, setValue] = useState("")
     const [predict, setPredict] = useState("")
-    const [data, setData] = useState(intialData)
     const [link, setLink] = useState(false)
+    const [data, setData] = useState(javascriptData)
 
     const handleKeyDown = async (e) => {
         if (e.key === 'Tab') {
@@ -25,14 +25,14 @@ const Homepage = (props) => {
         }
         if (e.key === 'Enter'){
             e.preventDefault()
-            await setLink("https://www.youtube.com/watch?v=Rq5SEhs9lws")
+            await setLink(data[value.text])
             window.scrollTo(0,1000)
         }
     }
 
     const change = e => {
         setValue({ text: e.target.value })
-        let itemname = data.filter((oneatatime) => {
+        let itemname = Object.keys(data).filter((oneatatime) => {
             if (oneatatime.toLocaleLowerCase().includes(value.text?.toLocaleLowerCase())) {
                 return oneatatime
             }
