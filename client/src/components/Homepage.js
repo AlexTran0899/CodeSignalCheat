@@ -26,7 +26,7 @@ const Homepage = (props) => {
         if (e.key === 'Enter'){
             e.preventDefault()
             await setLink(data[value.text])
-            window.scrollTo(0,1000)
+            window.scrollTo(0,5000)
         }
         if (e.key === "\\"){
             e.preventDefault()
